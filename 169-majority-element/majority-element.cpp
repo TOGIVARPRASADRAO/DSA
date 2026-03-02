@@ -1,22 +1,20 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-        int n = nums.size();
+        int count = 0;
+        int ans = 0;
 
-        for(int val : nums){
-            int freq = 0;
-
-            for(int el : nums){
-                if(el == val){
-                    freq++;
-                }
+        for(int num : nums) {
+            if(count == 0) {
+                ans = num;
             }
 
-            if(freq > n/2){
-                return val;
-            }
+            if(num == ans)
+                count++;
+            else
+                count--;
         }
 
-        return -1;  // added return statement to fix compilation error
+        return ans;
     }
 };
