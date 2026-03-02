@@ -4,12 +4,12 @@ public:
         int count = 0;
         int ans = 0;
 
-        for(int num : nums) {
+        for(int val : nums) {
             if(count == 0) {
-                ans = num;
+                ans = val;
             }
 
-            if(num == ans)
+            if(val == ans)
                 count++;
             else
                 count--;
